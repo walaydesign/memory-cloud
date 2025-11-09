@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+$text: #333333;
+$white: #fff;
+$brown: #CA9969;
+$brown-2: #9C5C1C;
+$primary-50:#FFFAF6;
+$primary-100:#FFF1E3;
+$primary-200:#FDDFC1;
+$primary-300:#E5C099;
+$primary-400:$brown;
+$primary-500:#B47D46;
+$primary-600:#9E6023;
+$primary-700:#85490D;
+$primary-800:#763B00;
+$primary-900:#4A2500;
+$dark-50:#F0F0F0;
+$dark-100:#DEDEDE;
+$dark-200:#C5C5C5;
+$dark-300:#ADADAD;
+$dark-400:#919191;
+$dark-500:#707070;
+$dark-600:#515151;
+$dark-700:$text;
+$dark-800:#202020;
+$dark-900:#000000;
+$transition: 0.3s;
+$body-md: 16px;
+$body-lg: 18px;
+$serif-md: 700 16px "noto serif TC";
+$num-md: 700 20px "Titillium Web", sans-serif;
+$body-bold-lg: 700 18px "noto serif TC";
+$shadow-common: 0 4px 15px rgba(0,0,0,0.15);
+$font-sans: "noto sans TC";
+$font-serif: "noto serif TC";
+$font-titillium: "Titillium Web", sans-serif;
+
+$header-height: 90px;
+$header-height-mobile: 70px;
+$nav-top-mobile: calc(100vh - 70px);
+
+$banner-ratio: 40%;
+$banner-ratio-mobile: 80%;
+
+body {
+    color: $text;
+    background-image: url(../img/bg.png);
+    background-size: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input, select, textarea, button {
+    outline: none;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+main {
+    overflow: hidden;
+    padding-top: $header-height;
+    @media screen and (max-width: 991px) {
+        padding-top: $header-height-mobile;   
+    }
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $text;
+    display: block;
+    transition: $transition;
+    &:hover {
+        text-decoration: none;
+        color: $primary-600;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    border: 1px solid $primary-400;
+    padding: 8px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 0;
+    &-text {
+        font-size: 16px;
+        font-family: $font-serif;
+        font-weight: 700;
+        transition: $transition;
+    }
+    &-icon {
+        font-size: 16px;
+        &::before {
+            transition: $transition;
+        }
+    }
+    &-border {
+        background-color: transparent;
+        color: $primary-400;
+        font-family: $font-serif;
+        font-weight: 700;
+        .btn {
+            &-text {
+                color: $primary-400;
+                font-family: $font-serif;
+                font-weight: 700;
+            }
+            &-icon {
+                &::before {
+                    color: $primary-600;
+                }
+            }
+        }
+        &:hover {
+            border-color: $primary-700;
+            color: $primary-700;
+            .btn {
+                &-text {
+                    color: $primary-700;
+                }
+                &-icon {
+                    &::before {
+                        color: $primary-700;
+                    }
+                }
+            }
+        }
+    }
+    &-fill {
+        background-color: $primary-400;
+        color: $white;
+        font-family: $font-serif;
+        font-weight: 700;
+        .btn {
+            &-text {
+                color: $white;
+                font-family: $font-serif;
+                font-weight: 700;
+            }
+            &-icon {
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+        &:hover {
+            background-color: $primary-700;
+            color: $white;
+            border-color: $primary-700;
+        }
+    }
+}
+
+.header {
+    height: $header-height;
+    background-color: $white;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__main {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        height: 100%;
+    }
+    &__logo {
+        width: 125px;
+    }
+    &__nav {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            a {
+                font: $serif-md;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    background-color: $primary-600;
+                    top: calc(100% + 12px);
+                    left: 50%;
+                    transition: $transition;
+                    height: 0;
+                }
+                &.active, &:hover {
+                    color: $primary-600;
+                    &::after {
+                        height: 46px;
+                    }
+                }
+            }
+        }
+    }
+    &__btn {
+        padding: 8px 45px;
+        background-color: $primary-400;
+        color: $white;
+        font-size: 16px;
+        font-family: $font-serif;
+        font-weight: 700;
+        &:hover {
+            background-color: $primary-600;
+            color: $white;
+        }
+    }
+    &__func {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
+    &__menu {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        .bar {
+            position: absolute;
+            width: 95%;
+            height: 1px;
+            background-color: $primary-600;
+            transition: $transition;
+            left: 50%;
+            transform: translateX(-50%);
+            &-top {
+                top: 4px;
+            }
+            &-middle {
+                top: calc(50% - 0.5px);
+            }
+            &-bottom {
+                top: calc(100% - 5px);
+            }
+        }
+        &.active {
+            .bar {
+                top: 50%;
+                left: 50%;
+                &-top, &-middle {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+                &-bottom {
+                     transform: translate(-50%, -50%) rotate(45deg);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        .container {
+            max-width: inherit;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        height: $header-height-mobile;
+        &__nav {
+            position: fixed;
+            background-color: $white;
+            height: $nav-top-mobile;
+            top: $header-height-mobile;
+            right: 0;
+            max-width: 400px;
+            width: 100%;
+            transition: $transition;
+            right: -450px;
+            ul {
+                display: block;
+                a {
+                    padding: 12px 40px;
+                    &::after {
+                        width: 0;
+                        height: 1px;
+                        top: 50%;
+                        left: -40px;
+                    }
+                    &.active, &:hover {
+                        &::after {
+                            width: 60px;
+                            height: 1px;
+                        }
+                    }
+                }
+            }
+            &.active {
+                right: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &__logo {
+            width: 110px;
+        }
+        &__btn {
+            padding: 8px 20px;
+        }
+    }
+}

@@ -41,11 +41,15 @@ $nav-top-mobile: calc(100vh - 70px);
 
 $banner-ratio: 40%;
 $banner-ratio-mobile: 80%;
+$banner-inner-ratio: 28%;
+$banner-inner-ratio-mobile: 80%;
 
 body {
     color: $text;
     background-image: url(../img/bg.png);
     background-size: 100%;
+    background-position: 0 0;
+    background-repeat: repeat;
 }
 
 input::-webkit-outer-spin-button,
@@ -63,11 +67,15 @@ input, select, textarea, button {
     background-color: transparent;
 }
 
+button {
+    transition: $transition;
+}
+
 main {
     overflow: hidden;
     padding-top: $header-height;
-    @media screen and (max-width: 991px) {
-        padding-top: $header-height-mobile;   
+    @media screen and (max-width: 767px) {
+        padding-top: $header-height-mobile;
     }
 }
 
@@ -150,6 +158,27 @@ ul {
             }
         }
     }
+    &-border-onlyicon {
+        width: 40px;
+        height: 40px;
+        border: 1px solid $brown-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        .btn-icon {
+            font-size: 32px;
+            color: $brown-2;
+        }
+        &:hover {
+            background-color: $brown-2;
+            .btn-icon {
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+    }
     &-fill {
         background-color: $primary-400;
         color: $white;
@@ -173,6 +202,29 @@ ul {
             border-color: $primary-700;
         }
     }
+    @media screen and (max-width: 575px) {
+        &-border-onlyicon {
+            
+        }
+    }
+
+}
+
+.title {
+    font-size: 46px;
+    font-weight: 900;
+    margin-bottom: 36px;
+    text-align: center;
+    font-family: $font-serif;
+    color: $brown-2;
+    @media screen and (max-width: 991px) {
+        font-size: 36px;
+    }
+}
+
+.text {
+    font-size: 16px;
+    font-family: $font-serif;
 }
 
 .header {
@@ -180,8 +232,6 @@ ul {
     background-color: $white;
     z-index: 100;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     .container {
         display: flex;
@@ -323,6 +373,101 @@ ul {
         }
         &__btn {
             padding: 8px 20px;
+        }
+    }
+}
+
+.footer {
+    padding: 20px;
+    background-color: $primary-400;
+    p {
+        text-align: center;
+        margin: 0;
+        color: $white;
+        font-size: 14px;
+    }
+}
+
+.banner-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: $banner-inner-ratio;
+    &__pic {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+    &__text {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: $white;
+    }
+    &__title {
+        font-size: 42px;
+        font-family: $font-serif;
+        font-weight: 900;
+        text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+        margin-bottom: 10px;
+    }
+    &__en {
+        font-size: 18px;
+        font-family: $font-titillium;
+        text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+        margin-bottom: 0;
+    }
+    @media screen and (max-width: 991px) {
+        padding-bottom: $banner-ratio-mobile;
+    }
+    @media screen and (max-width: 575px) {
+        &__title {
+            font-size: 36px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+    }
+}
+
+.pagination {
+    margin: 30px auto 0;
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+    border-top: 1px solid $primary-400;
+    border-bottom: 1px solid $primary-400;
+    a {
+        width: 40px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-family: $font-serif;
+        font-weight: 700;
+        color: $primary-600;
+        &.active {
+            background-color: $primary-400;
+            color: $white;
+        }
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+    >ul {
+        display: flex;
+    }
+    &_arrow {
+        span {
+            font-size: 16px;
+            &::before {
+                color: $primary-600;
+            }
         }
     }
 }

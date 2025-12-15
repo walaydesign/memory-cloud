@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>追思雲</title>
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./public/icomoon/style.css" />
+    <link rel="stylesheet" href="./public/css/aos/aos.css" />
+    <link rel="stylesheet" href="./public/css/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__main">
+          <a href="./index.html" class="header__logo"
+            ><img src="./public/img/logo.svg" alt=""
+          /></a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="./about.html">關於追思雲</a></li>
+              <li><a href="./news.html">最新公告</a></li>
+              <li><a href="">線上追思</a></li>
+              <li><a href="">個人故事館</a></li>
+              <li><a href="">購買祭品/供品</a></li>
+              <li><a href="">業者合作</a></li>
+            </ul>
+            <ul class="d-lg-none header-nav-account">
+                <li><a href="" class="active">個人資料</a></li>
+                <li><a href="">家屬資料</a></li>
+                <li><a href="">個人故事館</a></li>
+                <li><a href="">購買紀錄</a></li>
+                <li><a href="">變更密碼</a></li>
+                <li><a href="">登出</a></li>
+              </ul>
+          </nav>
+        </div>
+        <div class="header__func">
+          <a href="" class="header__account">
+            <div class="header-account-pic">
+              <img src="./public/img/pic.png" alt="" />
+            </div>
+            <p class="header-account-name">會員名稱</p>
+          </a>
+          <button class="header__menu d-lg-none">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom"></div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="account">
+        <div class="container">
+          <div class="account-sidebar">
+            <div class="account-sidebar_pic">
+              <img src="./public/img/pic.png" alt="" />
+            </div>
+            <nav class="account-sidebar_nav">
+              <ul>
+                <li><a href="" class="active">個人資料</a></li>
+                <li><a href="">家屬資料</a></li>
+                <li><a href="">個人故事館</a></li>
+                <li><a href="">購買紀錄</a></li>
+                <li><a href="">變更密碼</a></li>
+                <li><a href="">登出</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="account-main">
+            <div class="account-main_title">
+                <h1>個人資料</h1>
+            </div>
+            <div class="account-main_content">
+              <form class="account_form">
+                <div class="input-item">
+                  <label for="">亡者姓名</label>
+                  <input type="text" />
+                </div>
+                <div class="input-item">
+                  <label for="">居住地</label>
+                  <input type="text" />
+                </div>
+                <div class="input-item">
+                  <label for="">出生日期</label>
+                  <input type="text" id="birthday" class="datepicker" />
+                </div>
+                <div class="input-item">
+                  <label for="">死亡日期</label>
+                  <input type="text" id="deathday" class="datepicker" />
+                </div>
+                <button class="btn btn-fill ms-auto">變更</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Copyright © 2025 追思雲</p>
+    </footer>
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/aos/aos.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.js"></script>
+    <script src="./public/js/mansory/masonry.pkgd.min.js"></script>
+    <script src="./public/js/common.js"></script>
+
+    <script>
+        $(function () {
+        $("#birthday").datepicker();
+        $("#deathday").datepicker();
+      });
+    </script>
+  </body>
+</html>

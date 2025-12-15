@@ -24,6 +24,7 @@ $dark-600:#515151;
 $dark-700:$text;
 $dark-800:#202020;
 $dark-900:#000000;
+$red: #DA0000;
 $transition: 0.3s;
 $body-md: 16px;
 $body-lg: 18px;
@@ -51,6 +52,7 @@ body {
     background-position: 0 0;
     background-repeat: repeat;
     font-family: $font-serif;
+    color: $text;
 }
 
 input::-webkit-outer-spin-button,
@@ -72,9 +74,18 @@ button {
     transition: $transition;
 }
 
+select {
+  appearance: none;
+  background-image: url(../img/select-arrow.svg);
+  background-size: 18px;
+  background-position: calc(100% - 14px) center;
+  background-repeat: no-repeat;
+}
+
 main {
     overflow: hidden;
     padding-top: $header-height;
+    min-height: calc(100vh - 61px);
     @media screen and (max-width: 767px) {
         padding-top: $header-height-mobile;
     }
@@ -83,6 +94,13 @@ main {
 .container {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.datepicker {
+    background-image: url(../img/calendar.svg);
+  background-size: 24px;
+  background-position: calc(100% - 14px) center;
+  background-repeat: no-repeat;
 }
 
 img {
@@ -109,110 +127,157 @@ ul {
 }
 
 .btn {
-    border: 1px solid $primary-400;
-    padding: 8px 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    border-radius: 0;
-    &-text {
-        font-size: 16px;
-        font-family: $font-serif;
-        font-weight: 700;
-        transition: $transition;
-        margin: 0;
+  border: 1px solid $primary-400;
+  padding: 8px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 0;
+  &-text {
+    font-size: 16px;
+    font-family: $font-serif;
+    font-weight: 700;
+    transition: $transition;
+    margin: 0;
+  }
+  &-icon {
+    font-size: 16px;
+    &::before {
+      transition: $transition;
     }
-    &-icon {
-        font-size: 16px;
-        &::before {
-            transition: $transition;
-        }
-    }
-    &-border {
-        background-color: transparent;
+  }
+  &-border {
+    background-color: transparent;
+    color: $primary-400;
+    font-family: $font-serif;
+    font-weight: 700;
+    width: fit-content;
+    .btn {
+      &-text {
         color: $primary-400;
         font-family: $font-serif;
         font-weight: 700;
-        width: fit-content;
-        .btn {
-            &-text {
-                color: $primary-400;
-                font-family: $font-serif;
-                font-weight: 700;
-            }
-            &-icon {
-                &::before {
-                    color: $primary-600;
-                }
-            }
+      }
+      &-icon {
+        &::before {
+          color: $primary-600;
         }
-        &:hover {
-            border-color: $primary-700;
+      }
+    }
+    &:hover {
+      border-color: $primary-700;
+      color: $primary-700;
+      .btn {
+        &-text {
+          color: $primary-700;
+        }
+        &-icon {
+          &::before {
             color: $primary-700;
-            .btn {
-                &-text {
-                    color: $primary-700;
-                }
-                &-icon {
-                    &::before {
-                        color: $primary-700;
-                    }
-                }
-            }
+          }
         }
+      }
     }
-    &-border-onlyicon {
-        width: 40px;
-        height: 40px;
-        border: 1px solid $brown-2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        .btn-icon {
-            font-size: 32px;
-            color: $brown-2;
-        }
-        &:hover {
-            background-color: $brown-2;
-            .btn-icon {
-                &::before {
-                    color: $white;
-                }
-            }
-        }
+  }
+  &-border-onlyicon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $brown-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    .btn-icon {
+      font-size: 32px;
+      color: $brown-2;
     }
-    &-fill {
-        background-color: $primary-400;
+    &:hover {
+      background-color: $brown-2;
+      .btn-icon {
+        &::before {
+          color: $white;
+        }
+      }
+    }
+  }
+  &-fill {
+    background-color: $primary-400;
+    color: $white;
+    font-family: $font-serif;
+    font-weight: 700;
+    width: fit-content;
+    .btn {
+      &-text {
         color: $white;
         font-family: $font-serif;
         font-weight: 700;
-        width: fit-content;
-        .btn {
-            &-text {
-                color: $white;
-                font-family: $font-serif;
-                font-weight: 700;
-            }
-            &-icon {
-                &::before {
-                    color: $white;
-                }
-            }
+      }
+      &-icon {
+        &::before {
+          color: $white;
         }
-        &:hover {
-            background-color: $primary-700;
-            color: $white;
-            border-color: $primary-700;
-        }
+      }
     }
-    @media screen and (max-width: 575px) {
-        &-border-onlyicon {
-            
-        }
+    &:hover {
+      background-color: $primary-700;
+      color: $white;
+      border-color: $primary-700;
     }
-
+  }
+  &-fill-light {
+    padding: 8px 36px;
+    background-color: $primary-200;
+    border-color: $primary-200;
+    .btn {
+      &-icon {
+        &::before {
+          color: $primary-700;
+        }
+      }
+      &-text {
+        color: $primary-700;
+      }
+    }
+    &:hover {
+      background-color: $primary-500;
+      border-color: $primary-500;
+      .btn {
+      &-icon {
+        &::before {
+          color: $white;
+        }
+      }
+      &-text {
+        color: $white;
+      }
+    }
+    }
+  }
+  &-alert {
+    width: 52px;
+    height: 32px;
+    border-color: $red;
+    color: $red;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0;
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+  }
+  &-file {
+    position: relative;
+    input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+  }
 }
 
 .title {
@@ -263,6 +328,11 @@ ul {
         height: 100%;
         padding: 0 10px;
         border: 1px solid $primary-500;
+    }
+    >textarea {
+        border: 1px solid $primary-500;
+        padding: 10px;
+        height: 180px;
     }
     &.radio {
         .radio {
@@ -317,6 +387,10 @@ ul {
             }
         }
     }
+    &.textarea {
+        flex-direction: column;
+        height: auto;
+    }
 }
 
 .header {
@@ -364,6 +438,11 @@ ul {
                         height: 46px;
                     }
                 }
+            }
+            &.header-nav-account {
+                padding-top: 24px;
+                margin-top: 24px;
+                border-top: 1px solid $primary-200;
             }
         }
     }
@@ -419,6 +498,32 @@ ul {
             }
         }
     }
+    &__account {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .header-account {
+            &-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            >img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+            }
+            }
+            &-name {
+                margin: 0;
+                font-weight: 700;
+            }
+        }
+    }
     @media screen and (max-width: 1199px) {
         .container {
             max-width: inherit;
@@ -436,6 +541,8 @@ ul {
             width: 100%;
             transition: $transition;
             right: -450px;
+            overflow-y: auto;
+            padding: 20px 0;
             ul {
                 display: block;
                 a {
@@ -456,6 +563,17 @@ ul {
             }
             &.active {
                 right: 0;
+            }
+        }
+        &__account {
+            .header-account {
+                &-pic {
+                    width: 40px;
+                    height: 40px;
+                }
+                &-name {
+                    display: none;
+                }
             }
         }
     }
@@ -499,6 +617,7 @@ ul {
         left: 0;
         transform: translateY(-50%);
         color: $white;
+        z-index: 2;
     }
     &__title {
         font-size: 42px;
@@ -512,6 +631,16 @@ ul {
         font-family: $font-titillium;
         text-shadow: 0 2px 3px rgba(0,0,0,0.3);
         margin-bottom: 0;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 100%);
+        top: 0;
+        left: 0;
+        z-index: 1;
     }
     @media screen and (max-width: 991px) {
         padding-bottom: $banner-ratio-mobile;

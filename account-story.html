@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>追思雲</title>
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./public/icomoon/style.css" />
+    <link rel="stylesheet" href="./public/css/aos/aos.css" />
+    <link rel="stylesheet" href="./public/css/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__main">
+          <a href="./index.html" class="header__logo"
+            ><img src="./public/img/logo.svg" alt=""
+          /></a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="./about.html">關於追思雲</a></li>
+              <li><a href="./news.html">最新公告</a></li>
+              <li><a href="">線上追思</a></li>
+              <li><a href="">個人故事館</a></li>
+              <li><a href="">購買祭品/供品</a></li>
+              <li><a href="">業者合作</a></li>
+            </ul>
+            <ul class="d-lg-none header-nav-account">
+              <li><a href="">個人資料</a></li>
+              <li><a href="">家屬資料</a></li>
+              <li><a href="" class="active">個人故事館</a></li>
+              <li><a href="">購買紀錄</a></li>
+              <li><a href="">變更密碼</a></li>
+              <li><a href="">登出</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__func">
+          <a href="" class="header__account">
+            <div class="header-account-pic">
+              <img src="./public/img/pic.png" alt="" />
+            </div>
+            <p class="header-account-name">會員名稱</p>
+          </a>
+          <button class="header__menu d-lg-none">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom"></div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="account">
+        <div class="container">
+          <div class="account-sidebar">
+            <div class="account-sidebar_pic">
+              <img src="./public/img/pic.png" alt="" />
+            </div>
+            <nav class="account-sidebar_nav">
+              <ul>
+                <li><a href="">個人資料</a></li>
+                <li><a href="">家屬資料</a></li>
+                <li><a href="" class="active">個人故事館</a></li>
+                <li><a href="">購買紀錄</a></li>
+                <li><a href="">變更密碼</a></li>
+                <li><a href="">登出</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="account-main">
+            <div class="account-main_title">
+              <h1>個人故事館</h1>
+              <a href="" class="btn btn-fill">
+                <p class="btn-text">前往個人故事館</p>
+                <span class="btn-icon icon-arrow-right"></span>
+              </a>
+            </div>
+            <div class="account-main_content">
+              <form class="story-form">
+                <div class="form-item">
+                  <label for="">亡者照片</label>
+                  <div class="form_pic form_media uploaded">
+                    <img src="./public/img/pic.png" alt="" />
+                    <button class="form_media_upload">
+                      <span class="icon-cloud"></span>
+                      <p>上傳</p>
+                      <input type="file" />
+                    </button>
+                  </div>
+                </div>
+                <div class="form-item">
+                  <label for="">生平事蹟</label>
+                  <textarea name="" id=""></textarea>
+                </div>
+                <div class="form-item">
+                  <label for="">座右銘</label>
+                  <ol class="form-item_list">
+                    <li><input type="text" /></li>
+                  </ol>
+                  <button class="btn btn-fill-light mx-auto">
+                    <span class="btn-icon icon-plus"></span>
+                    <p class="btn-text">新增時段</p>
+                  </button>
+                </div>
+                <div class="form-item">
+                  <label for="">遺言</label>
+                  <textarea name="" id=""></textarea>
+                </div>
+                <div class="form-item">
+                  <div class="form-item_title">
+                    <label for="">追思牆</label>
+                    <button class="btn btn-fill-light btn-file">
+                      <span class="btn-icon icon-plus"></span>
+                      <p class="btn-text">新增</p>
+                      <input type="file" />
+                    </button>
+                  </div>
+                  <div class="memory-wall">
+                    <div class="container">
+                      <div class="memory-wall_inner">
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic2.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic3.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic4.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic5.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic6.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic7.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic8.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic9.png" alt="" />
+                        </div>
+                        <div class="memory-wall_item">
+                          <img src="./public/img/pic10.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-fill ms-auto">變更</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Copyright © 2025 追思雲</p>
+    </footer>
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/aos/aos.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.js"></script>
+    <script src="./public/js/mansory/masonry.pkgd.min.js"></script>
+    <script src="./public/js/common.js"></script>
+
+    <script>
+      $(".memory-wall").masonry({
+        itemSelector: ".memory-wall_item",
+      });
+    </script>
+  </body>
+</html>

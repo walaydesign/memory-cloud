@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>追思雲</title>
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <meta property="og:image" content="./public/img/share.jpg" />
+    <meta property="og:url" content="./public/img/share.jpg" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./public/icomoon/style.css" />
+    <link rel="stylesheet" href="./public/css/aos/aos.css" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__main">
+          <a href="./index.html" class="header__logo"
+            ><img src="./public/img/logo.svg" alt=""
+          /></a>
+          <nav class="header__nav">
+            <ul>
+              <li><a href="./about.html">關於追思雲</a></li>
+              <li><a href="">最新公告</a></li>
+              <li><a href="" class="active">線上追思</a></li>
+              <li><a href="">個人故事館</a></li>
+              <li><a href="">購買祭品/供品</a></li>
+              <li><a href="">業者合作</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__func">
+          <a href="" class="header__btn">我要祭拜</a>
+          <button class="header__menu d-lg-none">
+            <div class="bar bar-top"></div>
+            <div class="bar bar-middle"></div>
+            <div class="bar bar-bottom"></div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="step">
+        <div class="step_item active">
+          <div class="step_icon">
+            <span class="icon-purchase"></span>
+          </div>
+          <p class="step_text">選擇<br class="d-sm-none" />祭品/供品</p>
+        </div>
+        <div class="step_item active">
+          <div class="step_icon">
+            <span class="icon-music"></span>
+          </div>
+          <p class="step_text">選擇<br class="d-sm-none" />音樂/誦經</p>
+        </div>
+        <div class="step_item active">
+          <div class="step_icon">
+            <span class="icon-video"></span>
+          </div>
+          <p class="step_text">上傳影片</p>
+        </div>
+        <div class="step_item">
+          <div class="step_icon">
+            <span class="icon-share"></span>
+          </div>
+          <p class="step_text">邀請好友</p>
+        </div>
+      </div>
+      <div class="memory-product">
+        <div class="container">
+          <div class="video">
+            <div class="memory-product_title">
+              <h1>上傳影片</h1>
+              <button class="btn btn-border">
+                <span class="btn-icon icon-plus"></span>
+                <p class="btn-text">新增</p>
+              </button>
+            </div>
+            <div class="row">
+              <div class="col-lg-4">
+                <a
+                  class="video_item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <video src="./public/video/video.mp4"></video>
+                  <div class="video_btn">
+                    <img src="./public/img/triangle.svg" alt="" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a
+                  class="video_item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <video src="./public/video/video.mp4"></video>
+                  <div class="video_btn">
+                    <img src="./public/img/triangle.svg" alt="" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a
+                  class="video_item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <video src="./public/video/video.mp4"></video>
+                  <div class="video_btn">
+                    <img src="./public/img/triangle.svg" alt="" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a
+                  class="video_item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <video src="./public/video/video.mp4"></video>
+                  <div class="video_btn">
+                    <img src="./public/img/triangle.svg" alt="" />
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a
+                  class="video_item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                >
+                  <video src="./public/video/video.mp4"></video>
+                  <div class="video_btn">
+                    <img src="./public/img/triangle.svg" alt="" />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="form_btns">
+          <a href="" class="btn btn-border">
+            <span class="btn-icon icon-arrow-left"></span>
+            <span class="btn-text">上一步</span>
+          </a>
+          <a href="" class="btn btn-fill">
+            <span class="btn-text">下一步</span>
+            <span class="btn-icon icon-arrow-right"></span>
+          </a>
+        </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Copyright © 2025 追思雲</p>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="videoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span class="icon-x"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <video
+              class="w-100"
+              src="./public/video/video.mp4"
+              controls
+            ></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/aos/aos.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.js"></script>
+    <script src="./public/js/common.js"></script>
+  </body>
+</html>
